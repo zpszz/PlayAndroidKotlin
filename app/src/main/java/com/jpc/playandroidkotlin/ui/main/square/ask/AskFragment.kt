@@ -11,6 +11,7 @@ import com.jpc.playandroidkotlin.base.MyApplication
 import com.jpc.playandroidkotlin.data.bean.Article
 import com.jpc.playandroidkotlin.data.bean.CollectData
 import com.jpc.playandroidkotlin.databinding.IncludeSwiperefreshRecyclerviewBinding
+import com.jpc.playandroidkotlin.ui.author.AuthorActivity
 import com.jpc.playandroidkotlin.ui.main.home.ArticleAdapter
 
 /**
@@ -46,11 +47,11 @@ class AskFragment :
                     setOnItemChildClickListener { _, view, position ->
                         when (view.id) {
                             // 查看作者文章列表
-//                            R.id.tv_author ->
-//                                AuthorActivity.launch(
-//                                    requireContext(),
-//                                    mAdapter.getItem(position).userId
-//                                )
+                            R.id.tv_author ->
+                                AuthorActivity.launch(
+                                    requireContext(),
+                                    mAdapter.getItem(position).userId
+                                )
                             // 收藏与取消收藏
                             R.id.iv_collect ->
                                 if (mAdapter.getItem(position).collect) {

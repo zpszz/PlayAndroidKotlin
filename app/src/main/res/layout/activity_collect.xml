@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.collect.CollectActivity">
+
+    <data>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.jpc.library_base.widgets.TitleLayout
+            android:id="@+id/titleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_50"
+            android:layout_marginEnd="@dimen/dp_50"
+            android:layout_marginBottom="@dimen/dp_2"
+            android:background="@color/color_main"
+            app:layout_constraintBottom_toBottomOf="@id/titleLayout"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/white"
+            app:tabMode="scrollable"
+            app:tabTextAppearance="@style/TabLayoutTextStyle"
+            app:tabTextColor="@color/white"/>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:layout_constraintTop_toBottomOf="@id/titleLayout"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

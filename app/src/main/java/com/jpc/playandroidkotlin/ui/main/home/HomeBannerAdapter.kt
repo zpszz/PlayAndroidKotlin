@@ -5,6 +5,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.jpc.library_base.ext.load
 import com.jpc.playandroidkotlin.data.bean.Banner
+import com.jpc.playandroidkotlin.ui.web.WebActivity
 import com.youth.banner.adapter.BannerAdapter
 
 /**
@@ -25,16 +26,8 @@ class HomeBannerAdapter(dataList: ArrayList<Banner>): BannerAdapter<Banner, Home
     override fun onBindView(holder: BannerViewHolder, data: Banner, position: Int, size: Int) {
         holder.imageView.apply {
             load(data.imagePath)
-            //setOnClickListener { WebActivity.launch(context, data) }
+            setOnClickListener { WebActivity.launch(context, data) }
         }
-//        holder?.imageView?.apply {
-//            if(data != null){
-//                load(data.imagePath)
-//            }
-//            // 点击跳转
-//            // setOnClickListener{}
-//        }
-
     }
 
     inner class BannerViewHolder(var imageView: ImageView): RecyclerView.ViewHolder(imageView)

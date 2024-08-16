@@ -13,6 +13,7 @@ import com.jpc.playandroidkotlin.base.MyApplication
 import com.jpc.playandroidkotlin.data.bean.Article
 import com.jpc.playandroidkotlin.data.bean.CollectData
 import com.jpc.playandroidkotlin.databinding.IncludeSwiperefreshRecyclerviewBinding
+import com.jpc.playandroidkotlin.ui.author.AuthorActivity
 
 /**
  * 项目Tab下的子Fragment
@@ -64,10 +65,10 @@ class ProjectChildFragment :
                     setOnItemChildClickListener { _, view, position ->
                         when (view.id) {
                             // 查看作者文章列表
-//                            R.id.tv_author -> AuthorActivity.launch(
-//                                requireContext(),
-//                                mAdapter.getItem(position).userId
-//                            )
+                            R.id.tv_author -> AuthorActivity.launch(
+                                requireContext(),
+                                mAdapter.getItem(position).userId
+                            )
                             R.id.iv_collect ->
                                 if (mAdapter.getItem(position).collect) {
                                     mViewModel.unCollectArticle(mAdapter.getItem(position).id) {

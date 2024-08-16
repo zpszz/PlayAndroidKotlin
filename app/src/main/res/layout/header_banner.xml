@@ -12,7 +12,7 @@
             android:id="@+id/banner"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            app:banner_indicator_selected_color="@color/_e91e63"
+            app:banner_indicator_selected_color="@color/color_main"
             app:banner_indicator_normal_color="@color/_cccccc"/>
     </LinearLayout>
 </layout>

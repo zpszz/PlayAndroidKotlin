@@ -23,7 +23,7 @@ object StatusBarUtil {
         // 透明状态栏
         activity.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         activity.window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-        activity.window.statusBarColor = activity.resources.getColor(R.color.purple_500)
+        activity.window.statusBarColor = activity.resources.getColor(R.color.color_main)
     }
 
     /**

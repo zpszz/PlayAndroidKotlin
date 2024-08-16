@@ -22,7 +22,7 @@
     <string name="password">密码</string>
     <string name="password_sure">确认密码</string>
     <string name="user_name">用户名</string>
-    <string name="to_register">去注册</string>
+    <string name="to_register">没有账号？去注册</string>
     <string name="basic_setting">基本设置</string>
     <string name="clearCache">清除缓存</string>
     <string name="logout">退出登录</string>
@@ -47,10 +47,14 @@
     <string name="input_search_key_to_search">输入关键字搜索</string>
     <string name="enter_immediately">立即进入</string>
     <string name="register">注册</string>
-    <string name="changeIp">切换IP</string>
-    <string name="please_input_ip_and_port">请输入IP和端口</string>
     <string name="sure">确认</string>
-    <string name="history_ip_and_port">历史IP与端口(可选择)</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_tip">嘿！\n赶紧登录吧！</string>
+    <string name="login_tip_small">欢迎回来～我们等你好久了!</string>
+    <string name="remember_password">记住密码</string>
+    <string name="register_tip">欢迎来到玩安卓博客</string>
+    <string name="register_tip_small">下方输入用户名、密码进行注册</string>
+    <string name="re_password">确认密码</string>
+    <string name="back">返回</string>
 </resources>

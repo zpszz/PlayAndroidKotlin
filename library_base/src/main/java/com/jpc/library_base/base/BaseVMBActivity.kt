@@ -16,16 +16,17 @@ import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
-abstract class BaseVMBActivity<VM: BaseViewModel, B: ViewDataBinding>(private val contentViewResId: Int): AppCompatActivity(){
+abstract class BaseVMBActivity<VM : BaseViewModel, B : ViewDataBinding>(private val contentViewResId: Int) :
+    AppCompatActivity() {
     lateinit var mViewModel: VM
     lateinit var mBinding: B
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // 设置沉浸式状态栏
-        if (setFullScreen()){
+        if (setFullScreen()) {
             StatusBarUtil.setNoStatus(this)
-        }else{
+        } else {
             StatusBarUtil.setImmersionStatus(this)
         }
         // 初始化
@@ -37,15 +38,16 @@ abstract class BaseVMBActivity<VM: BaseViewModel, B: ViewDataBinding>(private va
 
     // ViewModel初始化
     @Suppress("UNCHECKED_CAST")
-    private fun initViewModel(){
+    private fun initViewModel() {
         // 利用反射获取泛型中的第一个参数ViewModel
-        val type: Class<VM> = (this.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0] as Class<VM>
+        val type: Class<VM> =
+            (this.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0] as Class<VM>
         mViewModel = ViewModelProvider(this)[type]
         mViewModel.start()
     }
 
     // DataBinding初始化
-    private fun initDataBinding(){
+    private fun initDataBinding() {
         mBinding = DataBindingUtil.setContentView(this, contentViewResId)
         mBinding.apply {
             // 需要绑定lifecycleOwner到Activity，这样xml中绑定的数据才会随着LiveData数据源的改变而改变
@@ -92,12 +94,12 @@ abstract class BaseVMBActivity<VM: BaseViewModel, B: ViewDataBinding>(private va
     }
 
     // 是否是无状态栏的全屏模式
-    open fun setFullScreen(): Boolean{
+    open fun setFullScreen(): Boolean {
         return false
     }
 
     // 提供一个请求错误的方法，用于关闭加载框、显示错误布局之类的
-    open fun requestError(msg: String?){
+    open fun requestError(msg: String?) {
         hideLoading()
     }
 }

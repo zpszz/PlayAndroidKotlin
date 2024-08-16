@@ -19,7 +19,7 @@
             android:layout_height="48dp"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:indeterminateTint="@color/purple_500"
+            android:indeterminateTint="@color/color_main"
             android:indeterminateTintMode="src_atop" />
 
         <TextView

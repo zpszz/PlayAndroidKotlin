@@ -27,7 +27,7 @@
             android:layout_marginStart="@dimen/dp_10"
             android:layout_marginEnd="@dimen/dp_10"
             android:layout_marginBottom="@dimen/dp_2"
-            android:background="@color/_6200EE"
+            android:background="@color/color_main"
             app:layout_constraintBottom_toBottomOf="@id/titleLayout"
             app:tabGravity="center"
             app:tabIndicatorColor="@color/white"
@@ -44,7 +44,7 @@
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:indeterminateTint="@color/purple_500"
+            android:indeterminateTint="@color/color_main"
             android:visibility="@{showLoading ? View.VISIBLE : View.GONE}"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -36,7 +36,7 @@ ext {
             // 轮播图 https://github.com/youth5201314/banner
             banner                       : 'io.github.youth5201314:banner:2.2.2',
             // 更强大的webView
-            agentWeb                     : "com.github.Justson.AgentWeb:agentweb-core:5.1.1-androidx",
+            agentWeb                     : "io.github.justson:agentweb-core:v5.1.1-androidx",
             // 屏幕适配https://github.com/JessYanCoding/AndroidAutoSize
             AndroidAutoSize              : "com.github.JessYanCoding:AndroidAutoSize:1.2.1",
 

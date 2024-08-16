@@ -26,7 +26,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.TitleLayout)
         val titleBackgroundColor = typedArray.getColor(
             R.styleable.TitleLayout_titleBackgroundColor,
-            ContextCompat.getColor(context, R.color.purple_500)
+            ContextCompat.getColor(context, R.color.color_main)
         )
         val backIconRes =
             typedArray.getResourceId(R.styleable.TitleLayout_backIconRes, R.drawable.ic_back)

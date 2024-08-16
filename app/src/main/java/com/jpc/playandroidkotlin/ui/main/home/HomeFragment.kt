@@ -2,6 +2,7 @@ package com.jpc.playandroidkotlin.ui.main.home
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +21,8 @@ import com.jpc.playandroidkotlin.data.bean.Banner
 import com.jpc.playandroidkotlin.data.bean.CollectData
 import com.jpc.playandroidkotlin.databinding.FragmentHomeBinding
 import com.jpc.playandroidkotlin.databinding.HeaderBannerBinding
+import com.jpc.playandroidkotlin.ui.author.AuthorActivity
+import com.jpc.playandroidkotlin.ui.search.SearchActivity
 import com.youth.banner.indicator.CircleIndicator
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.launch
@@ -60,6 +63,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(R.layout.f
         mBinding.apply {
             titleLayout.setRightView(R.drawable.ic_search) {
                 // 跳转搜索界面
+                SearchActivity.launch(requireContext())
             }
             includeList.apply {
                 recyclerView.apply {
@@ -68,11 +72,11 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(R.layout.f
                         loadMoreModule.setOnLoadMoreListener { loadMoreData() }
                         addHeaderView(headerBannerBinding.root)
                         addChildClickViewIds(R.id.tv_author, R.id.iv_collect)
-                        setOnItemClickListener { _, view, position ->
+                        setOnItemChildClickListener{ _, view, position ->
                             when (view.id) {
                                 // 查看作者的文章列表
                                 R.id.tv_author -> {
-
+                                    AuthorActivity.launch(requireContext(), mArticleAdapter.getItem(position).userId)
                                 }
                                 // 收藏与取消收藏
                                 R.id.iv_collect -> {

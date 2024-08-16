@@ -1,10 +1,12 @@
 package com.jpc.playandroidkotlin.ui.main.home
 
 import androidx.lifecycle.MutableLiveData
+import com.jpc.library_base.BaseApplication.Companion.context
 import com.jpc.library_base.base.BaseViewModel
 import com.jpc.library_base.data.bean.PageResponse
 import com.jpc.library_base.ext.handleRequest
 import com.jpc.library_base.ext.launch
+import com.jpc.library_base.utils.ToastUtil
 import com.jpc.playandroidkotlin.data.DataRepository
 import com.jpc.playandroidkotlin.data.bean.Article
 import com.jpc.playandroidkotlin.data.bean.Banner
@@ -96,7 +98,10 @@ class HomeViewModel: BaseViewModel(){
      */
     fun unCollectArticle(id: Int, successCallback: () -> Any? = {}){
         launch({
-            handleRequest(DataRepository.unCollectArticle(id), { successCallback.invoke() })
+            handleRequest(DataRepository.unCollectArticle(id), {
+                successCallback.invoke()
+                ToastUtil.showShort(context, "收藏成功，记得时常看看哦")
+            })
         })
     }
 }

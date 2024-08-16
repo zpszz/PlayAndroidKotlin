@@ -6,6 +6,7 @@ import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.jpc.playandroidkotlin.R
 import com.jpc.playandroidkotlin.data.bean.Article
 import com.jpc.playandroidkotlin.databinding.ListItemArticleImageBinding
+import com.jpc.playandroidkotlin.ui.web.WebActivity
 
 /**
  * 带图片的文章列表的Adapter
@@ -25,6 +26,7 @@ class ImageArticleAdapter: BaseQuickAdapter<Article, BaseDataBindingHolder<ListI
             executePendingBindings()
             clItem.setOnClickListener {
                 // 跳转到文章详情页面
+                WebActivity.launch(context, item)
             }
         }
     }

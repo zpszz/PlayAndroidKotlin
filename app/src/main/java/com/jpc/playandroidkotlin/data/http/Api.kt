@@ -146,7 +146,7 @@ interface Api {
 
     /** 取消收藏站内文章 */
     @POST("lg/collect/deletetool/json")
-    suspend fun unCollectUrl(@Query("id") id: Int): ApiResponse<Any?>
+    suspend fun  unCollectUrl(@Query("id") id: Int): ApiResponse<Any?>
 
     /** 获取其他作者分享的文章分页列表 */
     @GET("user/{id}/share_articles/{page}/json")

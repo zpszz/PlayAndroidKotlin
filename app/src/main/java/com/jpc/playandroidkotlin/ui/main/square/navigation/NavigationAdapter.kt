@@ -6,6 +6,7 @@ import com.google.android.flexbox.FlexboxLayoutManager
 import com.jpc.playandroidkotlin.R
 import com.jpc.playandroidkotlin.data.bean.Navigation
 import com.jpc.playandroidkotlin.databinding.ListItemSystemBinding
+import com.jpc.playandroidkotlin.ui.web.WebActivity
 
 /**
  * 导航模块的Adapter
@@ -30,6 +31,7 @@ class NavigationAdapter :
                     setList(item.articles)
                     setOnItemClickListener { _, _, position ->
                         // 点击跳转到Web
+                        WebActivity.launch(context, item.articles[position])
                     }
                 }
             }

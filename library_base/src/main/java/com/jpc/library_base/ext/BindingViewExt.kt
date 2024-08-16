@@ -6,7 +6,6 @@ import com.jpc.library_base.widgets.TitleLayout
 
 /**
  * DataBinding的自定义属性
- * @author LTP  2022/4/2
  */
 @BindingAdapter("imageUrl")
 fun ImageView.setImageUrl(url: String) {
@@ -15,7 +14,6 @@ fun ImageView.setImageUrl(url: String) {
 
 /**
  * ImageView设置圆形图片
- * @author LTP  2022/4/2
  */
 @BindingAdapter("circleImageUrl")
 fun ImageView.setCircleImageUrl(url: String) {

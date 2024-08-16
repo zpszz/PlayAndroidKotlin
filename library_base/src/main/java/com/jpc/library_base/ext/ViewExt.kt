@@ -87,7 +87,7 @@ fun ImageView.loadCircle(@DrawableRes resourceId: Int) {
  */
 fun SwipeRefreshLayout.initColors() {
     setColorSchemeResources(
-        R.color.purple_500, android.R.color.holo_red_light,
+        R.color.color_main, android.R.color.holo_red_light,
         android.R.color.holo_orange_light, android.R.color.holo_green_light
     )
 }

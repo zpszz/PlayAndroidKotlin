@@ -5,13 +5,12 @@
     <data>
 
     </data>
-    <!--LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:fitsSystemWindows="true"
         tools:context=".ui.main.MainActivity">
-
         <FrameLayout
             android:id="@+id/fl_container"
             android:layout_width="match_parent"
@@ -23,24 +22,8 @@
             android:layout_height="wrap_content"
             app:labelVisibilityMode="selected"
             android:layout_gravity="bottom"
+            app:itemIconTint="@color/bottom_nav_item_color"
+            app:itemTextColor="@color/bottom_nav_item_color"
             app:menu="@menu/menu_bottom_nav"/>
-    </LinearLayout-->
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        tools:context=".ui.main.MainActivity">
-        <FrameLayout
-            android:id="@+id/fl_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:labelVisibilityMode="selected"
-            android:background="#ffffff"
-            android:layout_gravity="bottom"
-            app:menu="@menu/menu_bottom_nav"/>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
 </layout>

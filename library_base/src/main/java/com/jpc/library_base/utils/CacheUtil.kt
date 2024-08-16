@@ -49,10 +49,12 @@ object CacheUtil {
 private fun deleteDir(file: File): Boolean {
     if (file.isDirectory) {
         val children = file.list()
-        for (i in children.indices) {
-            val success = deleteDir(File(file, children[i]))
-            if (!success) {
-                return false
+        if (children != null) {
+            for (i in children.indices) {
+                val success = deleteDir(File(file, children[i]))
+                if (!success) {
+                    return false
+                }
             }
         }
     }
@@ -71,12 +73,14 @@ fun getFolderSize(file: File?): Long {
     file?.run {
         try {
             val fileList = listFiles()
-            for (i in fileList.indices) {
-                // 如果下面还有文件
-                size += if (fileList[i].isDirectory) {
-                    getFolderSize(fileList[i])
-                } else {
-                    fileList[i].length()
+            if (fileList != null) {
+                for (i in fileList.indices) {
+                    // 如果下面还有文件
+                    size += if (fileList[i].isDirectory) {
+                        getFolderSize(fileList[i])
+                    } else {
+                        fileList[i].length()
+                    }
                 }
             }
         } catch (e: Exception) {

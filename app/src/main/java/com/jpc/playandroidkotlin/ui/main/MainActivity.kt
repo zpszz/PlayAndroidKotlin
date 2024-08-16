@@ -15,7 +15,7 @@ import com.jpc.playandroidkotlin.ui.main.home.HomeFragment
 import com.jpc.playandroidkotlin.ui.main.mine.MineFragment
 import com.jpc.playandroidkotlin.ui.main.project.ProjectFragment
 import com.jpc.playandroidkotlin.ui.main.square.SquareFragment
-import com.jpc.playandroidkotlin.ui.main.wechat.WeChatFragment
+import com.jpc.playandroidkotlin.ui.main.wechat.WechatFragment
 
 // 主Activity
 class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(R.layout.activity_main) {
@@ -30,7 +30,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(R.layout.a
     private val mHomeFragment: HomeFragment by lazy { HomeFragment.newInstance() }
     private val mProjectFragment: ProjectFragment by lazy { ProjectFragment.newInstance() }
     private val mSquareFragment: SquareFragment by lazy { SquareFragment.newInstance() }
-    private val mWeChatFragment: WeChatFragment by lazy { WeChatFragment.newInstance() }
+    private val mWeChatFragment: WechatFragment by lazy { WechatFragment.newInstance() }
     private val mMineFragment: MineFragment by lazy { MineFragment.newInstance() }
 
     // 当前显示的Fragment

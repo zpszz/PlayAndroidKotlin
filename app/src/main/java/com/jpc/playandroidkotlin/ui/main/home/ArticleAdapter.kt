@@ -6,6 +6,7 @@ import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.jpc.playandroidkotlin.R
 import com.jpc.playandroidkotlin.data.bean.Article
 import com.jpc.playandroidkotlin.databinding.ListItemArticleBinding
+import com.jpc.playandroidkotlin.ui.web.WebActivity
 
 /**
  * 文章列表的Adapter
@@ -21,6 +22,7 @@ class ArticleAdapter:  BaseQuickAdapter<Article, BaseDataBindingHolder<ListItemA
             executePendingBindings()
             clItem.setOnClickListener{
                 // 点击跳转到Web文章详情页面
+                WebActivity.launch(context, item)
             }
         }
     }

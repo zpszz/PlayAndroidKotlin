@@ -13,12 +13,13 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp"
         app:cardElevation="4dp">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
+            android:layout_margin="@dimen/dp_4"
             android:background="?android:attr/selectableItemBackground">
             <TextView
                 android:id="@+id/tv_author"
@@ -131,14 +132,22 @@
                 app:layout_constraintTop_toTopOf="@+id/tv_type2"
                 tools:ignore="ContentDescription"
                 tools:src="@drawable/ic_un_collect" />
-            <View
+            <include
+                layout="@layout/include_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_author"
+                app:layout_constraintEnd_toEndOf="@id/tv_date"
+                />
+            <!--View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/_d8d8d8"
                 android:layout_marginTop="@dimen/dp_4"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@id/tv_type2"
-                app:layout_constraintEnd_toEndOf="@id/tv_date"/>
+                app:layout_constraintEnd_toEndOf="@id/tv_date"/-->
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>
