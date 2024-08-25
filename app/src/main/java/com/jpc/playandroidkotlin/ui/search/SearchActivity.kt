@@ -14,6 +14,9 @@ import com.jpc.playandroidkotlin.data.local.CacheManager
 import com.jpc.playandroidkotlin.databinding.ActivitySearchBinding
 import com.jpc.playandroidkotlin.ui.search.result.SearchResultActivity
 
+/**
+ * 搜索Activity
+ */
 class SearchActivity : BaseActivity<SearchViewModel, ActivitySearchBinding>(R.layout.activity_search) {
     private val mSearchHistoryAdapter by lazy { SearchHistoryAdapter() }
     private val mHotSearchAdapter by lazy { HotSearchAdapter() }

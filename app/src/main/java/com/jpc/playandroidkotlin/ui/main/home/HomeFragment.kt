@@ -127,6 +127,9 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(R.layout.f
         super.createObserve()
         mViewModel.apply {
             lifecycleScope.launch {
+                // drop(1) 用于跳过 bannerListStateFlow 的第一次发射。通常情况下，
+                // 这是为了忽略 MutableStateFlow 创建时设置的初始值（在这种情况下是一个空列表）。
+                // 初始值对 UI 更新没有意义，因此跳过它以避免不必要的 UI 刷新。
                 bannerListStateFlow.flowWithLifecycle(lifecycle).drop(1).collect {
                     it.let {
                         mBannerList.apply {
@@ -221,7 +224,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(R.layout.f
         }
     }
 
-    // 下拉加载更多
+    // 上拉加载更多
     private fun loadMoreData() {
         // 禁止下拉刷新
         mBinding.includeList.swipeRefreshLayout.isEnabled = false

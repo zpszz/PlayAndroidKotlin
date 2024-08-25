@@ -66,7 +66,7 @@ class AddArticleActivity :
                             addArticle(title.get()!!, articleLink.get()!!) {
                                 MyApplication.appViewModel.shareArticleEvent.value = true
                                 hideLoading()
-                                onBackPressed()
+                                onBackPressedDispatcher.onBackPressed()
                             }
                         }
                     }

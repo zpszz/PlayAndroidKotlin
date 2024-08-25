@@ -63,7 +63,7 @@ class IntegralRankActivity :
                                 // 积分记录
                                 IntegralRecordActivity.launch(this@IntegralRankActivity)
                         }
-                        true
+                        true // true表示消费掉了这个事件
                     }
                 }
 

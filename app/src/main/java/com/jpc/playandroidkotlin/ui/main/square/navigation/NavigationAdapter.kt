@@ -22,6 +22,7 @@ class NavigationAdapter :
             text = item.name
             executePendingBindings()
             recyclerView.apply {
+                // FlexboxLayoutManager实现流式布局
                 layoutManager = FlexboxLayoutManager(context)
                 // 当确定Item的改变不会影响RecyclerView的宽高时可以设置为true以提高性能
                 setHasFixedSize(true)

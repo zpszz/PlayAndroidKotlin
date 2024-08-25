@@ -8,6 +8,9 @@ import androidx.lifecycle.ViewModelStoreOwner
 import com.tencent.mmkv.MMKV
 import java.lang.ref.WeakReference
 
+/**
+ * 这是一个基类Application，用于初始化一些全局配置
+ */
 open class BaseApplication: Application(), ViewModelStoreOwner{
     private var mFactory: ViewModelProvider.Factory? = null
     private val appViewModelStore: ViewModelStore by lazy { ViewModelStore() }

@@ -19,7 +19,11 @@ object ScreenUtil {
      * @return dp转换为px后的值
      */
     fun dp2px(context: Context, dpVal: Float): Int {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpVal, context.resources.displayMetrics).toInt()
+        return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            dpVal,
+            context.resources.displayMetrics
+        ).toInt()
     }
 
     /**
@@ -31,7 +35,11 @@ object ScreenUtil {
      * @return sp转换为px后的值
      */
     fun sp2px(context: Context, spVal: Float): Int {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, spVal, context.resources.displayMetrics).toInt()
+        return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_SP,
+            spVal,
+            context.resources.displayMetrics
+        ).toInt()
     }
 
     /**
@@ -104,7 +112,6 @@ object ScreenUtil {
         } catch (e: Exception) {
             e.printStackTrace()
         }
-
         return dpi
     }
 }

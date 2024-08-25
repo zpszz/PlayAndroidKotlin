@@ -22,10 +22,22 @@ class HomeViewModel: BaseViewModel(){
         const val PAGE_SIZE = 10
     }
     // Banner列表
+    /**
+     * 这是使用MutableStateFlow来实现的，MutableStateFlow是一个可变的StateFlow，可以通过value属性来修改它的值
+     * StateFlow是一个只读的数据流，它可以通过collect方法来监听数据的变化，为什么不使用LiveData呢？
+     * 因为LiveData是一个Lifecycle-aware的组件，它会在Activity或Fragment的生命周期结束时自动取消订阅，而StateFlow不会
+     * 但是StateFlow是一个Kotlin的协程库，它需要在协程的作用域内使用，所以在ViewModel中使用StateFlow是一个不错的选择
+     * 通过MutableStateFlow来实现LiveData的功能，这样可以更好的与协程结合，也可以更好的与Jetpack Compose结合
+     */
     private val _bannerListStateFlow = MutableStateFlow<List<Banner>>(emptyList())
     val bannerListStateFlow = _bannerListStateFlow
 
     // 文章列表
+    /**
+     * 这里使用MutableLiveData来实现，LiveData是一个具有生命周期感知能力的数据持有类，它可以感知Activity或Fragment的生命周期
+     * 当Activity或Fragment的生命周期结束时，LiveData会自动取消订阅，这样可以避免内存泄漏
+     * 为什么不使用StateFlow呢？因为StateFlow是一个Kotlin的协程库，它需要在协程的作用域内使用
+     */
     val articlePageListLiveData = MutableLiveData<PageResponse<Article>?>()
 
     override fun start() {
