@@ -23,6 +23,9 @@ import com.jpc.playandroidkotlin.databinding.ActivityWebBinding
 import com.just.agentweb.AgentWeb
 import com.just.agentweb.WebChromeClient
 
+/**
+ * 网页Activity，用于显示文章详情
+ */
 class WebActivity : BaseActivity<WebViewModel, ActivityWebBinding>(R.layout.activity_web) {
     private lateinit var mAgentWeb: AgentWeb
     private var mArticle: Article? = null

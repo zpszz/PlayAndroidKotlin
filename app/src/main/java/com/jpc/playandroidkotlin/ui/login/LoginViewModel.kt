@@ -12,7 +12,7 @@ import com.jpc.playandroidkotlin.data.local.UserManager
 class LoginViewModel : BaseViewModel() {
     val userName = ObservableField("")
     val password = ObservableField("")
-
+    val rememberPassword = ObservableBoolean(false)
     val loginBtnEnable = object : ObservableBoolean(userName, password) {
         override fun get(): Boolean {
             return !userName.get()?.trim().isNullOrEmpty() && !password.get().isNullOrEmpty()
@@ -21,6 +21,7 @@ class LoginViewModel : BaseViewModel() {
 
     override fun start() {
         userName.set(UserManager.getLastUserName())
+        password.set(UserManager.getLastUserPassword())
     }
 
     fun login(userName: String, password: String, successCallback: () -> Any? = {}) {
@@ -29,6 +30,11 @@ class LoginViewModel : BaseViewModel() {
                 {
                     UserManager.saveLastUserName(userName)
                     UserManager.saveUser(it.data)
+                    if (rememberPassword.get()){
+                        UserManager.storeLastUserPwd(password)
+                    }else{
+                        UserManager.storeLastUserPwd("")
+                    }
                     MyApplication.appViewModel.userEvent.value = it.data
                     successCallback.invoke()
                 })

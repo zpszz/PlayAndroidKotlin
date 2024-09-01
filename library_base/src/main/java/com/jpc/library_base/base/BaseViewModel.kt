@@ -4,6 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.jpc.library_base.data.bean.ApiResponse
 
+/**
+ * ViewModel基类
+ */
 abstract class BaseViewModel: ViewModel(){
     // 请求异常（请求失败、服务器连接超时等）
     val exception = MutableLiveData<Exception>()
@@ -11,5 +14,4 @@ abstract class BaseViewModel: ViewModel(){
     val errorResponse = MutableLiveData<ApiResponse<*>?>()
     // 界面启动时要进行的初始化操作，如网络请求、数据初始化等
     abstract fun start()
-
 }

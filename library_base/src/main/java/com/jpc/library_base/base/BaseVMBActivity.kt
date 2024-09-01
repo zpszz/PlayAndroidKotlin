@@ -16,6 +16,9 @@ import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
+/**
+ * ViewModel + DataBinding + Activity基类
+ */
 abstract class BaseVMBActivity<VM : BaseViewModel, B : ViewDataBinding>(private val contentViewResId: Int) :
     AppCompatActivity() {
     lateinit var mViewModel: VM

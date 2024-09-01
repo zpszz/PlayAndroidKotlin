@@ -8,11 +8,15 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.jpc.library_base.ext.hideLoading
 import com.jpc.library_base.ext.showLoading
 import com.jpc.library_base.utils.LogUtil
+import com.jpc.library_base.utils.ToastUtil
 import com.jpc.playandroidkotlin.R
 import com.jpc.playandroidkotlin.base.BaseActivity
 import com.jpc.playandroidkotlin.databinding.ActivityLoginBinding
 import com.jpc.playandroidkotlin.ui.login.register.RegisterActivity
 
+/**
+ * 登录页面
+ */
 class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>(R.layout.activity_login) {
     companion object{
         fun launch(context: Context){
@@ -28,11 +32,17 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>(R.layou
             }
         }
         mBinding.apply {
+            tvRememberPassword.setOnClickListener {
+                checkbox.isChecked = !checkbox.isChecked
+            }
             tvToRegister.setOnClickListener{
                 registerForActivityResult.launch(RegisterActivity.newIntent(this@LoginActivity))
             }
             btnLogin.setOnClickListener{
-                Log.d("LoginActivity", mViewModel.password.get()!!)
+                if (!mViewModel.loginBtnEnable.get()){
+                    ToastUtil.showShort(this@LoginActivity, "请输入完整的用户名、密码")
+                    return@setOnClickListener
+                }
                 showLoading("登录中...")
                 mViewModel.login(mViewModel.userName.get()!!, mViewModel.password.get()!!){
                     hideLoading()

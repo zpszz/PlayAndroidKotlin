@@ -49,7 +49,7 @@
                     android:layout_marginStart="@dimen/dp_12"
                     android:layout_marginTop="@dimen/dp_12"
                     android:text="@string/hot_search"
-                    android:textColor="@color/purple_500"
+                    android:textColor="@color/color_main"
                     android:textSize="@dimen/sp_16"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_12"
                     android:text="@string/search_history"
-                    android:textColor="@color/purple_500"
+                    android:textColor="@color/color_main"
                     android:textSize="@dimen/sp_16"
                     app:layout_constraintStart_toStartOf="@id/tv_hot_search"
                     app:layout_constraintTop_toBottomOf="@id/rv_hot_search" />

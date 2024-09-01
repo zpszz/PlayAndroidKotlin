@@ -13,6 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white">
+        <com.jpc.library_base.widgets.TitleLayout
+            android:id="@+id/titleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleText="@string/login"
+            app:layout_constraintTop_toTopOf="parent"/>
         <TextView
             android:id="@+id/tv_login_tip"
             android:layout_width="wrap_content"
@@ -38,63 +44,69 @@
             android:textSize="@dimen/sp_12"
             android:lineHeight="@dimen/dp_18"
             android:textColor="@color/_343965"/>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cd_login_username"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_login_username"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_50"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/tv_login_tip_small"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="@dimen/dp_35"
             android:layout_marginEnd="@dimen/dp_35"
             android:layout_marginTop="@dimen/dp_50"
-            android:backgroundTint="#ECF2FF"
-            app:cardCornerRadius="@dimen/dp_100"
-            app:cardElevation="0dp">
-            <EditText
+            app:endIconDrawable="@drawable/ic_clear"
+            app:endIconMode="clear_text"
+            app:boxCornerRadiusTopStart="@dimen/dp_8"
+            app:boxCornerRadiusTopEnd="@dimen/dp_8"
+            app:boxCornerRadiusBottomStart="@dimen/dp_4"
+            app:boxCornerRadiusBottomEnd="@dimen/dp_4"
+            app:boxBackgroundColor="@color/_ECF2FF">
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:autofillHints=""
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
                 android:hint="@string/user_name"
-                android:background="@null"
-                android:paddingStart="@dimen/dp_10"
-                android:paddingEnd="@dimen/dp_10"
-                android:inputType="text"
-                android:textSize="@dimen/sp_14"
+                android:maxLines="1"
+                android:maxLength="50"
+                android:textSize="@dimen/sp_16"
                 android:text="@={viewModel.userName}"/>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cd_login_password"
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_login_password"
             android:layout_width="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/cd_login_username"
-            app:layout_constraintStart_toStartOf="@id/cd_login_username"
-            app:layout_constraintEnd_toEndOf="@id/cd_login_username"
-            android:layout_height="@dimen/dp_50"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/til_login_username"
+            app:layout_constraintStart_toStartOf="@id/til_login_username"
+            app:layout_constraintEnd_toEndOf="@id/til_login_username"
             android:layout_marginStart="@dimen/dp_35"
             android:layout_marginEnd="@dimen/dp_35"
             android:layout_marginTop="@dimen/dp_15"
-            android:backgroundTint="#ECF2FF"
-            app:cardCornerRadius="@dimen/dp_100"
-            app:cardElevation="0dp">
-            <EditText
+            app:passwordToggleEnabled="true"
+            app:boxCornerRadiusTopStart="@dimen/dp_8"
+            app:boxCornerRadiusTopEnd="@dimen/dp_8"
+            app:boxCornerRadiusBottomStart="@dimen/dp_4"
+            app:boxCornerRadiusBottomEnd="@dimen/dp_4"
+            app:boxBackgroundColor="@color/_ECF2FF">
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:autofillHints=""
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
                 android:hint="@string/password"
-                android:background="@null"
-                android:paddingStart="@dimen/dp_10"
-                android:paddingEnd="@dimen/dp_10"
                 android:inputType="textPassword"
-                android:textSize="@dimen/sp_14"
+                android:maxLines="1"
+                android:maxLength="50"
+                android:textSize="@dimen/sp_16"
                 android:text="@={viewModel.password}"/>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.textfield.TextInputLayout>
         <CheckBox
             android:id="@+id/checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/cd_login_username"
-            app:layout_constraintTop_toBottomOf="@id/cd_login_password"
-            android:layout_marginTop="@dimen/dp_16"/>
+            app:layout_constraintStart_toStartOf="@id/til_login_username"
+            app:layout_constraintTop_toBottomOf="@id/til_login_password"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp_16"
+            android:checked="@={viewModel.rememberPassword}"/>
         <TextView
             android:id="@+id/tv_remember_password"
             android:layout_width="wrap_content"
@@ -109,15 +121,15 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/checkbox"
             app:layout_constraintBottom_toBottomOf="@id/checkbox"
-            app:layout_constraintEnd_toEndOf="@id/cd_login_username"
+            app:layout_constraintEnd_toEndOf="@id/til_login_username"
             android:textColor="#6C8FF8"
             android:text="@string/to_register"/>
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50"
-            app:layout_constraintTop_toBottomOf="@id/cd_login_password"
-            app:layout_constraintStart_toStartOf="@id/cd_login_username"
-            app:layout_constraintEnd_toEndOf="@id/cd_login_username"
+            app:layout_constraintTop_toBottomOf="@id/til_login_password"
+            app:layout_constraintStart_toStartOf="@id/til_login_username"
+            app:layout_constraintEnd_toEndOf="@id/til_login_username"
             android:layout_marginStart="@dimen/dp_35"
             android:layout_marginEnd="@dimen/dp_35"
             android:layout_marginTop="@dimen/dp_120"

@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 /**
- *
+ * 体系
  */
 @Parcelize
 data class Structure(

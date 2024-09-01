@@ -3,6 +3,9 @@ package com.jpc.playandroidkotlin.base
 import com.jpc.library_base.BaseApplication
 import com.tencent.bugly.Bugly
 
+/**
+ * 应用的Application，主要是为了创建AppViewModel的实例
+ */
 class MyApplication : BaseApplication(){
     companion object{
         lateinit var appViewModel: AppViewModel

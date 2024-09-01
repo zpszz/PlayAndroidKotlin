@@ -13,4 +13,5 @@
 
     <color name="color_selected">#01B27D</color>
     <color name="color_unselected">#242425</color>
+    <color name="_ECF2FF">#ECF2FF</color>
 </resources>

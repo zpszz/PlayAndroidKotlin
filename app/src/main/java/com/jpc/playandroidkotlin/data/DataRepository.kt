@@ -6,8 +6,6 @@ import com.jpc.library_base.data.bean.PageResponse
 import com.jpc.library_base.http.RetrofitManager
 import com.jpc.playandroidkotlin.data.bean.*
 import com.jpc.playandroidkotlin.data.http.Api
-import retrofit2.http.Path
-import retrofit2.http.Query
 
 /**
  * 数据仓库
@@ -64,9 +62,9 @@ object DataRepository : Api {
     }
 
     override suspend fun getProjectPageList(
-        @Path(value = "pageNo") pageNo: Int,
-        @Query(value = "page_size") pageSize: Int,
-        @Query(value = "cid") categoryId: Int
+        pageNo: Int,
+        pageSize: Int,
+        categoryId: Int
     ): ApiResponse<PageResponse<Article>> {
         return service.getProjectPageList(pageNo, pageSize, categoryId)
     }

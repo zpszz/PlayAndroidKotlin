@@ -49,8 +49,13 @@ class SearchActivity : BaseActivity<SearchViewModel, ActivitySearchBinding>(R.la
                     }
                     addChildClickViewIds(R.id.iv_delete)
                     setOnItemChildClickListener{_, _, position ->
-                        mViewModel.searchHistoryData.value?.removeAt(position)
-                        removeAt(position) // 从RecyclerView的Item项中删除
+                        mViewModel.searchHistoryData.value?.let { searchHistory ->
+                            if (position in searchHistory.indices){
+                                searchHistory.removeAt(position)
+                                mViewModel.searchHistoryData.value = searchHistory
+                                mSearchHistoryAdapter.notifyItemRemoved(position)
+                            }
+                        }
                         if (mViewModel.searchHistoryData.value?.size == 0)
                             tvClear.visibility = View.GONE
                     }

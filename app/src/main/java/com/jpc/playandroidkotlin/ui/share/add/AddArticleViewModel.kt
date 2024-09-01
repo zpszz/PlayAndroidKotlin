@@ -15,7 +15,7 @@ class AddArticleViewModel : BaseViewModel() {
     val shareUserName = ObservableField("")
 
 
-    /** 登录按键是否可点击(这样可避免在dataBinding中写较复杂的逻辑) */
+    /** 分享按键是否可点击(这样可避免在dataBinding中写较复杂的逻辑) */
     val shareBtnEnable = object : ObservableBoolean(title, articleLink) {
         override fun get(): Boolean {
             return !title.get()?.trim().isNullOrEmpty() && !articleLink.get()?.trim()

@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.OnBackPressedDispatcher
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jpc.library_base.data.bean.PageResponse
 import com.jpc.library_base.ext.getEmptyView
@@ -18,6 +17,9 @@ import com.jpc.playandroidkotlin.data.bean.CollectData
 import com.jpc.playandroidkotlin.databinding.ActivityAuthorBinding
 import com.jpc.playandroidkotlin.ui.main.home.ArticleAdapter
 
+/**
+ * 作者页面，展示作者的文章列表
+ */
 class AuthorActivity : BaseActivity<AuthorViewModel, ActivityAuthorBinding>(R.layout.activity_author) {
     /** 作者Id */
     private var mAuthorId = 0
@@ -151,7 +153,7 @@ class AuthorActivity : BaseActivity<AuthorViewModel, ActivityAuthorBinding>(R.la
         }
     }
 
-    /** 下拉加载更多 */
+    /** 上拉加载更多 */
     private fun loadMoreData() {
         // 上拉加载时禁止下拉刷新
         mBinding.swipeRefreshLayout.isEnabled = false

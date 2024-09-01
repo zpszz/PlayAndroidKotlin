@@ -17,7 +17,7 @@ import com.jpc.playandroidkotlin.databinding.ActivitySettingBinding
 import com.jpc.playandroidkotlin.ui.web.WebActivity
 
 /**
- * 设置
+ * 设置界面
  */
 class SettingActivity :
     BaseActivity<SettingViewModel, ActivitySettingBinding>(R.layout.activity_setting) {
@@ -69,7 +69,7 @@ class SettingActivity :
                     RetrofitManager.cookieJar.clear()
                     UserManager.logout()
                     MyApplication.appViewModel.userEvent.value = null
-                    OnBackPressedDispatcher().onBackPressed()
+                    onBackPressedDispatcher.onBackPressed()
                 })
             }
         }

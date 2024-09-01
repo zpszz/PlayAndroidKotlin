@@ -48,8 +48,6 @@
     <string name="enter_immediately">立即进入</string>
     <string name="register">注册</string>
     <string name="sure">确认</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login_tip">嘿！\n赶紧登录吧！</string>
     <string name="login_tip_small">欢迎回来～我们等你好久了!</string>
     <string name="remember_password">记住密码</string>

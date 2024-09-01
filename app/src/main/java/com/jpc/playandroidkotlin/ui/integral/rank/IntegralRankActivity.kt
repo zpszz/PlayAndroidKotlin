@@ -3,7 +3,6 @@ package com.jpc.playandroidkotlin.ui.integral.rank
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.OnBackPressedDispatcher
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jpc.library_base.data.bean.PageResponse
 import com.jpc.library_base.ext.getEmptyView
@@ -93,7 +92,7 @@ class IntegralRankActivity :
         mViewModel.fetchIntegralRankList()
     }
 
-    /** 下拉加载更多 */
+    /** 上拉加载更多 */
     private fun loadMoreData() {
         // 上拉加载时禁止下拉刷新
         mBinding.includeList.swipeRefreshLayout.isEnabled = false

@@ -11,7 +11,7 @@ import kotlin.math.max
 import kotlin.math.min
 
 /**
- * 流式布局
+ * 流式布局，但是没有用上，而是使用了google官方的flex布局 [com.google.android.flexbox.FlexboxLayout]
  */
 class FlowLayout(context: Context, attrs: AttributeSet?) : ViewGroup(context, attrs) {
 

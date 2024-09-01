@@ -5,6 +5,7 @@ import com.jpc.library_base.base.BaseViewModel
 import com.jpc.library_base.data.bean.PageResponse
 import com.jpc.library_base.ext.handleRequest
 import com.jpc.library_base.ext.launch
+import com.jpc.library_base.utils.LogUtil
 import com.jpc.playandroidkotlin.data.DataRepository
 import com.jpc.playandroidkotlin.data.bean.Article
 

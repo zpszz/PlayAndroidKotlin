@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 /**
- *
+ * 标签
  */
 @Parcelize
 data class Tag(

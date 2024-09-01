@@ -80,7 +80,7 @@ object UserManager {
     fun logout() {
         // 清除登录信息
         mmkv.remove(KEY_USER)
-        mmkv.remove(KEY_LAST_USER_PASSWORD)
+        //mmkv.remove(KEY_LAST_USER_PASSWORD)
         mmkv.remove(KEY_TOKEN)
     }
 }

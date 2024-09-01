@@ -37,7 +37,8 @@ open class BaseApplication: Application(), ViewModelStoreOwner{
     fun getAppViewModelProvider(): ViewModelProvider{
         return ViewModelProvider(this, getAppViewModelFactory())
     }
-    // 重写接口中的成员变量
+    // 重写了 ViewModelStoreOwner 接口中的 viewModelStore 属性，提供了一个自定义实现，返回 appViewModelStore 实例
+    // 这允许 BaseApplication 类管理一个 ViewModelStore，用于存储 ViewModel 实例
     override val viewModelStore: ViewModelStore
         get() = appViewModelStore
 }

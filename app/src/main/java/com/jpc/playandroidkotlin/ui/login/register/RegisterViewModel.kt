@@ -15,7 +15,7 @@ class RegisterViewModel : BaseViewModel() {
 
     val registerBtnEnable = object : ObservableBoolean(userName, password, rePassword) {
         override fun get(): Boolean {
-            return !userName.get()?.trim().isNullOrEmpty() && password.get()
+            return !userName.get()?.trim().isNullOrEmpty() && !password.get()
                 .isNullOrEmpty() && !rePassword.get().isNullOrEmpty()
         }
     }

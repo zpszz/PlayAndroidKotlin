@@ -157,7 +157,7 @@ class SystemArticleChildFragment :
         mViewModel.apply { fetchArticlePageList(categoryId = mCategoryId) }
     }
 
-    /** 下拉加载更多 */
+    /** 上拉加载更多 */
     private fun loadMoreData() {
         // 上拉加载时禁止下拉刷新
         mBinding.swipeRefreshLayout.isEnabled = false

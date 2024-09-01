@@ -12,6 +12,9 @@ import com.jpc.playandroidkotlin.databinding.ActivityCollectBinding
 import com.jpc.playandroidkotlin.ui.collect.article.CollectArticleFragment
 import com.jpc.playandroidkotlin.ui.collect.url.CollectUrlFragment
 
+/**
+ * 我的收藏，包含文章和网址两个Tab
+ */
 class CollectActivity : BaseActivity<CollectViewModel, ActivityCollectBinding>(R.layout.activity_collect) {
     private val mTitleList = arrayListOf("文章", "网址")
     private val mFragmentList: ArrayList<Fragment> = ArrayList()
