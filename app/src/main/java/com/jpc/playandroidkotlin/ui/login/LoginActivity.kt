@@ -3,11 +3,9 @@ package com.jpc.playandroidkotlin.ui.login
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import com.jpc.library_base.ext.hideLoading
 import com.jpc.library_base.ext.showLoading
-import com.jpc.library_base.utils.LogUtil
 import com.jpc.library_base.utils.ToastUtil
 import com.jpc.playandroidkotlin.R
 import com.jpc.playandroidkotlin.base.BaseActivity
@@ -32,9 +30,6 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>(R.layou
             }
         }
         mBinding.apply {
-            tvRememberPassword.setOnClickListener {
-                checkbox.isChecked = !checkbox.isChecked
-            }
             tvToRegister.setOnClickListener{
                 registerForActivityResult.launch(RegisterActivity.newIntent(this@LoginActivity))
             }

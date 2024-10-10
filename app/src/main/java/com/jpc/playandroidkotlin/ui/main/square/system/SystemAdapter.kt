@@ -28,7 +28,7 @@ class SystemAdapter :
             recyclerView.apply {
                 layoutManager = FlexboxLayoutManager(context)
                 setHasFixedSize(true) // 当确定Item的改变不会影响RecyclerView的宽高的时候可设置以提升性能
-                setItemViewCacheSize(200) // 设置缓存大小为200，默认为2
+                setItemViewCacheSize(20) // 设置缓存大小为20，默认为2
                 adapter = SystemChildAdapter().apply {
                     setList(item.children)
                     setOnItemClickListener { _, _, position ->

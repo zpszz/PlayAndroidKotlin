@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
+import androidx.activity.OnBackPressedDispatcherOwner
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
@@ -57,7 +58,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
         mBinding.ivBack.apply {
             visibility = if (isShowBack) View.VISIBLE else View.GONE
             setImageResource(backIconRes)
-            setOnClickListener { (context as Activity).onBackPressed() }
+            setOnClickListener { (context as OnBackPressedDispatcherOwner).onBackPressedDispatcher.onBackPressed() }
         }
 
         // TitleBar的标题文本
@@ -130,7 +131,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
     }
 
     /**
-     * 设置Title右测的TextView编辑菜单
+     * 设置Title右侧的TextView编辑菜单
      *
      * @param text            Title右测的TextView编辑菜单文本
      * @param onClickListener 菜单点击回调
@@ -148,7 +149,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
     }
 
     /**
-     * 设置Title右测的TextView编辑菜单
+     * 设置Title右侧的TextView编辑菜单
      *
      * @param rightViewBackground   Title右测的TextView背景色
      */
@@ -164,7 +165,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
     }
 
     /**
-     * 设置Title右测的TextView编辑菜单
+     * 设置Title右侧的TextView编辑菜单
      *
      * @param text            Title右测的TextView编辑菜单文本
      * @param textColor       Title右测的TextView编辑菜单文本颜色
@@ -186,7 +187,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
     }
 
     /**
-     * 设置Title右测的TextView编辑菜单
+     * 设置Title右侧的TextView编辑菜单
      *
      * @param text            Title右测的TextView编辑菜单文本
      */
@@ -204,7 +205,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
     }
 
     /**
-     * 设置Title右测的ImageView编辑菜单
+     * 设置Title右侧的ImageView编辑菜单
      *
      * @param imageRes        Title右测的ImageView编辑菜单ImageViewResource
      * @param onClickListener 菜单点击回调
@@ -222,7 +223,7 @@ class TitleLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(cont
     }
 
     /**
-     * 设置Title右测的ImageView编辑菜单
+     * 设置Title右侧的ImageView编辑菜单
      *
      * @param imageRes        Title右测的ImageView编辑菜单ImageViewResource
      */
